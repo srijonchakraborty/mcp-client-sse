@@ -166,6 +166,10 @@ curl -X POST "https://localhost:7044/chat/chatmath" \
      -d "\"What is the derivative of x^2 + 3x + 1?\""
 ```
 
+## Connected Application
+.NET Application MCP Server: https://github.com/srijonchakraborty/dot-net-sse-mcp-server
+.NET Application MCP Server:https://github.com/srijonchakraborty/remote-mcp-server-authless
+
 ## 🔧 Dependencies
 
 The project uses the following NuGet packages:
