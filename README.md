@@ -135,6 +135,57 @@ Send a message to the AI assistant with access to the primary MCP server tools.
 **Response:**
 Depending on available tools.
 
+### 2. Math-focused Chat Endpoint
+
+**POST** `/chat/chatmath`
+
+Send a message to the AI assistant with access to math-focused MCP server tools.
+
+**Request Body:**
+```json
+"Solve this equation: 2x + 5 = 15"
+```
+
+**Response:**
+
+### Example Usage
+
+#### General Chat
+```bash
+curl -X POST "https://localhost:7044/chat" \
+     -H "Content-Type: application/json" \
+     -d "\"Hello, can you help me with a task?\""
+```
+
+#### Math Chat
+```bash
+curl -X POST "https://localhost:7044/chat/chatmath" \
+     -H "Content-Type: application/json" \
+     -d "\"What is the derivative of x^2 + 3x + 1?\""
+```
+
+## 🔧 Dependencies
+
+The project uses the following NuGet packages:
+
+- **Azure.AI.OpenAI** (2.1.0) - OpenAI client library
+- **Microsoft.AspNetCore.OpenApi** (9.0.5) - OpenAPI support
+- **Microsoft.Extensions.AI** (9.7.1) - AI service abstractions
+- **Microsoft.Extensions.AI.OpenAI** (9.7.1-preview.1.25365.4) - OpenAI integration
+- **ModelContextProtocol** (0.3.0-preview.3) - MCP client library
+- **Swashbuckle.AspNetCore** (9.0.3) - Swagger documentation
+
+## 📁 Project Structure
+McpClient/
+├── Controller/
+│ └── ChatController.cs # Main chat API controller with dual endpoints
+├── Properties/
+│ └── launchSettings.json # Application launch configuration
+├── Program.cs # Application entry point and configuration
+├── appsettings.json # Production configuration
+├── appsettings.Development.json # Development configuration
+└── McpClient.csproj # Project file with dependencies
+
 ## 🤝 Contributing
 
 1. Fork the repository
