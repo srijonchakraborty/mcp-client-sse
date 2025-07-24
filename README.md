@@ -175,16 +175,6 @@ The project uses the following NuGet packages:
 - **ModelContextProtocol** (0.3.0-preview.3) - MCP client library
 - **Swashbuckle.AspNetCore** (9.0.3) - Swagger documentation
 
-## 📁 Project Structure
-McpClient/
-├── Controller/
-│ └── ChatController.cs # Main chat API controller with dual endpoints
-├── Properties/
-│ └── launchSettings.json # Application launch configuration
-├── Program.cs # Application entry point and configuration
-├── appsettings.json # Production configuration
-├── appsettings.Development.json # Development configuration
-└── McpClient.csproj # Project file with dependencies
 
 ## 🤝 Contributing
 
