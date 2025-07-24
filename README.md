@@ -1,6 +1,9 @@
 ﻿# MCP Client - .NET Web API
 
-A .NET 9.0 Web API application that integrates OpenAI's GPT-4 with Model Context Protocol (MCP) to provide intelligent chat interfaces with access to external tools and services. The application supports multiple MCP server endpoints for different use cases.
+A .NET 9.0 Web API application that integrates OpenAI's GPT-4.1 with Model Context Protocol (MCP) to provide intelligent chat interfaces with access to external tools and services. The application supports multiple MCP server endpoints for different use cases.
+
+![Uploading image.png…]()
+
 
 ## �� What it does
 
