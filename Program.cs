@@ -24,24 +24,24 @@ builder.Services.AddOpenApi();
 //    .Build();
 
 //OPEN AI Implemtation 
-builder.Services.AddChatClient(services =>
-    new ChatClientBuilder(
-         new OpenAIClient("OPENAI KEY")
-        .GetChatClient("gpt-4.1").AsIChatClient()
-    )
-    .UseFunctionInvocation()
-    .Build());
-var app = builder.Build();
-
-//Ollama
-//Need to update ollama implementation to use the new ChatClientBuilder
 //builder.Services.AddChatClient(services =>
 //    new ChatClientBuilder(
-//      new OllamaChatClient(new Uri("http://localhost:11434"), "llama3")
+//         new OpenAIClient("OPENAI KEY")
+//        .GetChatClient("gpt-4.1").AsIChatClient()
 //    )
 //    .UseFunctionInvocation()
 //    .Build());
 //var app = builder.Build();
+
+//Ollama
+//Need to update ollama implementation to use the new ChatClientBuilder
+builder.Services.AddChatClient(services =>
+    new ChatClientBuilder(
+      new OllamaChatClient(new Uri("http://localhost:11434"), "llama3")
+    )
+    .UseFunctionInvocation()
+    .Build());
+var app = builder.Build();
 
 //// Configure the HTTP request pipeline.
 //if (app.Environment.IsDevelopment())
