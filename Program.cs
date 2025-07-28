@@ -25,15 +25,15 @@ builder.Services.AddOpenApi();
 //});
 
 //OPEN AI Implemtation 
-builder.Services.AddSingleton<IChatClient>(provider =>
-{
-    return new ChatClientBuilder(
-         new OpenAIClient("")
-        .GetChatClient("gpt-4.1").AsIChatClient()
-    )
-    .UseFunctionInvocation()
-    .Build();
-});
+//builder.Services.AddSingleton<IChatClient>(provider =>
+//{
+//    return new ChatClientBuilder(
+//         new OpenAIClient("")
+//        .GetChatClient("gpt-4.1").AsIChatClient()
+//    )
+//    .UseFunctionInvocation()
+//    .Build();
+//});
 
 //builder.Services.AddChatClient(services =>
 //    new ChatClientBuilder(
@@ -46,12 +46,14 @@ builder.Services.AddSingleton<IChatClient>(provider =>
 
 //Ollama
 //Need to update ollama implementation to use the new ChatClientBuilder
-//builder.Services.AddChatClient(services =>
-//    new ChatClientBuilder(
-//      new OllamaChatClient(new Uri("http://localhost:11434"), "llama3")
-//    )
-//    .UseFunctionInvocation()
-//    .Build());
+builder.Services.AddSingleton<IChatClient>(provider =>
+{
+    return new ChatClientBuilder(
+      new OllamaChatClient(new Uri("http://localhost:11434"), "llama3")
+    )
+    .UseFunctionInvocation()
+    .Build();
+});
 var app = builder.Build();
 
 //// Configure the HTTP request pipeline.
